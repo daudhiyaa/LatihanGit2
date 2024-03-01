@@ -1,3 +1,4 @@
+import kotlin.math.PI
 import kotlin.math.sqrt
 
 class Triangle(private val side1: Double, private val side2: Double, private val side3: Double) {
@@ -23,4 +24,34 @@ class Triangle(private val side1: Double, private val side2: Double, private val
             println("Perimeter of the triangle: $perimeter")
         }
     }
+}
+class Circle {
+
+    fun main() {
+        val radius = 5.0
+
+        // Menghitung luas lingkaran
+        val area = calculateArea(radius)
+        println("Luas lingkaran dengan radius $radius adalah $area")
+
+        // Menghitung keliling lingkaran
+        val circumference = calculateCircumference(radius)
+        println("Keliling lingkaran dengan radius $radius adalah $circumference")
+    }
+
+    fun calculateArea(radius: Double): Double {
+        return PI * radius * radius
+    }
+
+    fun calculateCircumference(radius: Double): Double {
+        return 2 * PI * radius
+    }
+}
+
+fun main() {
+    // Membuat objek Circle
+    val circle = Circle()
+
+    // Memanggil fungsi main dari objek Circle
+    circle.main()
 }
