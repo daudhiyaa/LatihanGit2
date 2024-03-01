@@ -1,14 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+import kotlin.math.sqrt
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+class Triangle(private val side1: Double, private val side2: Double, private val side3: Double) {
+
+    fun calculateArea(): Double {
+        // Heron's formula for area of a triangle
+        val s = (side1 + side2 + side3) / 2
+        return sqrt(s * (s - side1) * (s - side2) * (s - side3))
+    }
+
+    fun calculatePerimeter(): Double {
+        return side1 + side2 + side3
+    }
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val triangle = Triangle(3.0, 4.0, 5.0)
+            val area = triangle.calculateArea()
+            val perimeter = triangle.calculatePerimeter()
+
+            println("Area of the triangle: $area")
+            println("Perimeter of the triangle: $perimeter")
+        }
     }
 }
